@@ -3,421 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shailen Bordoloi | Multilingual Astrologer</title>
+    <title>Shailen Bordoloi | Vedic Astrologer</title>
     <style>
         :root {
-            --primary-bg: #4A283D;
-            --secondary-bg: #F5EBE1;
+            --bg-dark: #3F2336;
+            --bg-light: #F4EAE1;
+            --text-dark: #3F2336;
             --text-light: #FFFFFF;
-            --text-dark: #2C1A24;
-            --accent-gold: #F3E3CD;
-            --accent-button: #FBEBD4;
+            --accent: #FFF1DB;
         }
-        
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            background-color: var(--secondary-bg);
+            background-color: var(--bg-light);
             color: var(--text-dark);
         }
-
-        header {
-            background-color: var(--primary-bg);
+        .hero {
+            background-color: var(--bg-dark);
             color: var(--text-light);
-            padding: 20px 40px;
+            padding: 20px 40px 60px 40px;
+            position: relative;
+        }
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding-bottom: 40px;
         }
-
-        .brand-name {
+        .brand {
             font-weight: bold;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            text-transform: uppercase;
         }
-
         .header-controls {
             display: flex;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
-
-        .language-select-container {
+        .lang-selector-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             font-size: 0.9rem;
         }
-
-        .language-select {
-            padding: 8px 12px;
+        .lang-select {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 12px;
             border-radius: 20px;
-            border: 1px solid var(--text-light);
-            background: transparent;
-            color: var(--text-light);
             cursor: pointer;
+            outline: none;
         }
-
-        .language-select option {
-            color: var(--text-dark);
+        .lang-select option {
+            background-color: var(--bg-dark);
+            color: white;
         }
-
         .btn-consultation {
-            background-color: var(--accent-button);
+            background-color: var(--accent);
             color: var(--text-dark);
             padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
-            text-transform: uppercase;
         }
-
-        .hero-section {
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            padding: 60px 40px 80px 40px;
+        .hero-container {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             gap: 40px;
-            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
         .hero-content {
             flex: 1;
-            min-width: 300px;
             max-width: 650px;
         }
-
-        .sub-tag {
-            color: var(--accent-gold);
+        .tagline {
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
-            display: block;
         }
-
-        .hero-content h1 {
+        .hero-title {
             font-size: 3rem;
             line-height: 1.2;
             margin-bottom: 25px;
-            font-weight: 600;
         }
-
         .hero-description {
             font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
-            margin-bottom: 35px;
-            opacity: 0.9;
+            margin-bottom: 40px;
         }
-
-        .cta-buttons {
+        .hero-buttons {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
         }
-
-        .btn-whatsapp {
-            background-color: var(--accent-button);
+        .btn-wa {
+            background-color: var(--accent);
             color: var(--text-dark);
-            padding: 12px 25px;
+            padding: 12px 28px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
-
         .btn-call {
-            border: 1px solid var(--text-light);
-            color: var(--text-light);
-            padding: 12px 25px;
+            border: 1px solid white;
+            color: white;
+            padding: 12px 28px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
         }
-
         .hero-visuals {
             display: flex;
             align-items: center;
             gap: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
-
-        .profile-circle {
+        .avatar-circle {
+            background-color: var(--accent);
+            color: var(--text-dark);
             width: 150px;
             height: 150px;
-            background-color: var(--accent-button);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: var(--text-dark);
-            font-weight: bold;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-
-        .profile-circle .initials {
+        .avatar-initials {
             font-size: 2.5rem;
-            margin-bottom: 5px;
+            font-weight: bold;
         }
-
-        .profile-circle .badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            padding: 4px 8px;
-            border-radius: 10px;
+        .avatar-subtitle {
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 5px;
         }
-
         .qr-card {
             background: white;
             padding: 20px;
-            border-radius: 12px;
+            border-radius: 20px;
             text-align: center;
-            width: 160px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            color: var(--text-dark);
+            width: 170px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-
         .qr-card img {
             width: 100%;
             height: auto;
-            margin-bottom: 12px;
+            display: block;
+            margin-bottom: 15px;
         }
-
-        .qr-card p {
-            font-size: 0.75rem;
+        .qr-title {
+            color: var(--text-dark);
+            font-size: 0.9rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 4px;
         }
-
-        .qr-card span {
-            font-size: 0.65rem;
-            color: #666;
-            display: block;
-            line-height: 1.2;
-        }
-
-        .main-content {
-            padding: 60px 40px;
+        .services-section {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 60px 40px;
         }
-
-        .section-label {
-            color: #A37F67;
+        .section-tag {
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: bold;
+            letter-spacing: 2px;
+            color: rgba(63, 35, 54, 0.6);
             margin-bottom: 15px;
-            display: block;
+            font-weight: bold;
         }
-
-        .main-content h2 {
+        .section-title {
             font-size: 2.2rem;
-            color: var(--text-dark);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
-
-        .about-section {
+        .about-row {
             display: flex;
             justify-content: space-between;
-            gap: 50px;
+            gap: 40px;
             margin-bottom: 60px;
-            flex-wrap: wrap;
         }
-
         .about-left {
             flex: 1;
-            min-width: 300px;
         }
-
         .about-right {
-            flex: 1;
-            min-width: 300px;
+            flex: 1.2;
         }
-
-        .about-right p {
+        .about-text {
             font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 25px;
         }
-
-        .lang-tags-container h4 {
+        .lang-pills-label {
+            font-weight: bold;
+            margin-bottom: 15px;
             font-size: 1rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
         }
-
-        .lang-tags {
+        .lang-pills {
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
+            margin-bottom: 15px;
         }
-
-        .lang-tag {
+        .pill {
             background-color: white;
-            padding: 8px 16px;
+            border: 1px solid rgba(63, 35, 54, 0.2);
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.9rem;
-            border: 1px solid #E0D5C8;
         }
-
-        .consultation-section {
-            background-color: var(--primary-bg);
+        .consultation-cta-box {
+            background-color: var(--bg-dark);
             color: var(--text-light);
             border-radius: 20px;
             padding: 50px 40px;
             text-align: center;
             margin-top: 40px;
         }
-
-        .consultation-section .section-label {
-            color: var(--accent-gold);
+        .cta-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            font-weight: bold;
         }
-
-        .consultation-section h3 {
+        .cta-title {
             font-size: 2rem;
             margin-bottom: 15px;
         }
-
-        .consultation-section .sub-text {
+        .cta-desc {
             font-size: 1rem;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 30px;
         }
-
-        .consultation-buttons {
+        .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
-
         footer {
             text-align: center;
             padding: 40px 20px;
             font-size: 0.85rem;
-            color: #777;
-            border-top: 1px solid #E0D5C8;
-            margin-top: 60px;
-            background-color: var(--secondary-bg);
+            color: rgba(63, 35, 54, 0.6);
+            border-top: 1px solid rgba(63, 35, 54, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        footer p {
+        footer .footer-name {
+            font-weight: bold;
             margin-bottom: 10px;
             text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
-
-        footer .disclaimer {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            font-weight: normal;
-            text-transform: none;
+        @media (max-width: 991px) {
+            .hero-container, .about-row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero-buttons, .cta-buttons {
+                justify-content: center;
+            }
+            .hero-visuals {
+                flex-direction: column;
+                margin-top: 30px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-name">✦ Shailen Bordoloi</div>
-        <div class="header-controls">
-            <div class="language-select-container">
-                <label for="lang">Select your Indian native language</label>
-                <select id="lang" class="language-select">
-                    <option value="en">English</option>
-                    <option value="as">অসমীয়া</option>
-                    <option value="hi">हिन्दी</option>
-                </select>
+    <section class="hero">
+        <header>
+            <div class="brand">✦ SHAILEN BORDOLOI</div>
+            <div class="header-controls">
+                <div class="lang-selector-container">
+                    <span id="label-select-lang">Select your Indian native language</span>
+                    <select class="lang-select" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="as">অসমীয়া</option>
+                        <option value="hi">हिन्दी</option>
+                    </select>
+                </div>
+                <a href="https://wa.me/919864268741" class="btn-consultation" id="btn-book">BOOK CONSULTATION</a>
             </div>
-            <a href="https://wa.me/919864268741" class="btn-consultation">Book Consultation</a>
-        </div>
-    </header>
+        </header>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <span class="sub-tag">Vedic Astrology • Personal Guidance</span>
-            <h1>Clarity for life's important questions.</h1>
-            <p class="hero-description">Personal astrology consultations for career, relationships, finance, family and important life decisions.</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/919864268741" class="btn-whatsapp">WhatsApp Me</a>
-                <a href="tel:+919864268741" class="btn-call">Call Now</a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="tagline" id="hero-tagline">Vedic Astrology • Personal Guidance</div>
+                <h1 class="hero-title" id="hero-title">Clarity for life's important questions.</h1>
+                <p class="hero-description" id="hero-desc">Personal astrology consultations for career, relationships, finance, family and important life decisions.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/919864268741" class="btn-wa" id="btn-wa-me">WhatsApp Me</a>
+                    <a href="tel:+919864268741" class="btn-call" id="btn-call-now">Call Now</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-visuals">
-            <div class="profile-circle">
-                <span class="initials">SB</span>
-                <span class="badge">✦ Vedic Astrologer</span>
-            </div>
-            <div class="qr-card">
-                <img src="qrcode_astroaskaquestionsupport-a11y.github.io.png" alt="Website QR Code">
-                <p>Scan My Website</p>
-                <span>Open the astrologer's website</span>
+            <div class="hero-visuals">
+                <div class="avatar-circle">
+                    <div class="avatar-initials">SB</div>
+                    <div class="avatar-subtitle" id="avatar-sub">✦ VEDIC ASTROLOGER</div>
+                </div>
+                <div class="qr-card">
+                    <img src="qrcode_astroaskaquestionsupport-a11y.github.io.png" alt="Website QR Code">
+                    <div class="qr-title" id="qr-text">Scan My Website</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <main class="main-content">
-        <span class="section-label">Services</span>
-        <h2>Guidance focused on your question</h2>
+    <section class="services-section">
+        <div class="section-tag" id="tag-services">Services</div>
+        <h2 class="section-title" id="title-guidance">Guidance focused on your question</h2>
 
-        <section class="about-section">
+        <div class="about-row">
             <div class="about-left">
-                <span class="section-label">About</span>
-                <h2>Namaste, I'm Shailen.</h2>
+                <div class="section-tag" id="tag-about">About</div>
+                <h2 class="section-title" id="title-namaste">Namaste, I'm Shailen.</h2>
             </div>
             <div class="about-right">
-                <p>I provide personal Vedic astrology consultations in a simple, respectful and confidential setting.</p>
-                <div class="lang-tags-container">
-                    <h4>Consultation Languages</h4>
-                    <div class="lang-tags">
-                        <div class="lang-tag">অসমীয়া</div>
-                        <div class="lang-tag">हिन्दी</div>
-                        <div class="lang-tag">English</div>
-                    </div>
+                <p class="about-text" id="about-desc">I provide personal Vedic astrology consultations in a simple, respectful and confidential setting.</p>
+                <div class="lang-pills-label" id="label-consult-lang">Consultation Languages</div>
+                <div class="lang-pills">
+                    <div class="pill">অসমীয়া</div>
+                    <div class="pill">हिन्दी</div>
+                    <div class="pill">English</div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="consultation-section">
-            <span class="section-label">Consultation</span>
-            <h3>Have a question you'd like to discuss?</h3>
-            <p class="sub-text">Contact me directly to enquire about an astrology consultation.</p>
-            <div class="consultation-buttons">
-                <a href="https://wa.me/919864268741" class="btn-whatsapp">Start on WhatsApp</a>
-                <a href="tel:+919864268741" class="btn-call">Call +91 98642 68741</a>
+        <div class="consultation-cta-box">
+            <div class="cta-tag" id="tag-consult">Consultation</div>
+            <h2 class="cta-title" id="title-cta">Have a question you'd like to discuss?</h2>
+            <p class="cta-desc" id="desc-cta">Contact me directly to enquire about an astrology consultation.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/919864268741" class="btn-wa" id="btn-start-wa">Start on WhatsApp</a>
+                <a href="tel:+919864268741" class="btn-call" id="btn-cta-call">Call +91 98642 68741</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <p>✦ Shailen Bordoloi</p>
-        <p class="disclaimer">Details will be customized for the real astrologer.</p>
-        <p class="disclaimer">Astrology offers guidance and perspective; outcomes are not guaranteed.</p>
+        <div class="footer-name">✦ SHAILEN BORDOLOI</div>
+        <div id="text-footer-note">Astrology offers guidance and perspective; outcomes are not guaranteed.</div>
     </footer>
 
+    <script>
+        const translations = {
+            en: {
+                selectLang: "Select your Indian native language",
+                bookConsult: "BOOK CONSULTATION",
+                heroTagline: "Vedic Astrology • Personal Guidance",
+                heroTitle: "Clarity for life's important questions.",
+                heroDesc: "Personal astrology consultations for career, relationships, finance, family and important life decisions.",
+                waMe: "WhatsApp Me",
+                callNow: "Call Now",
+                avatarSub: "✦ VEDIC ASTROLOGER",
+                qrText: "Scan My Website",
+                tagServices: "Services",
+                titleGuidance: "Guidance focused on your question",
+                tagAbout: "About",
+                titleNamaste: "Namaste, I'm Shailen.",
+                aboutDesc: "I provide personal Vedic astrology consultations in a simple, respectful and confidential setting.",
+                consultLang: "Consultation Languages",
+                tagConsult: "Consultation",
+                titleCta: "Have a question you'd like to discuss?",
+                descCta: "Contact me directly to enquire about an astrology consultation.",
+                startWa: "Start on WhatsApp",
+                footerNote: "Astrology offers guidance and perspective; outcomes are not guaranteed."
+            },
+            as: {
+                selectLang: "আপোনাৰ খিলঞ্জীয়া ভাৰতীয় ভাষা বাছনি কৰক",
+                bookConsult: "পৰামৰ্শ বুক কৰক",
+                heroTagline: "বৈদিক জ্যোতিষ • ব্যক্তিগত মাৰ্গদৰ্শন",
+                heroTitle: "জীৱনৰ গুৰুত্বপূৰ্ণ প্ৰশ্নসমূহৰ স্পষ্টতা।",
+                heroDesc: "কেৰিয়াৰ, সম্পৰ্ক, বিত্ত, পৰিয়াল আৰু জীৱনৰ গুৰুত্বপূৰ্ণ সিদ্ধান্তসমূহৰ বাবে ব্যক্তিগত জ্যোতিষ পৰামৰ্শ।",
+                waMe: "মোক হোৱাটছএপ কৰক",
+                callNow: "এতিয়াই কল কৰক",
+                avatarSub: "✦ বৈদিক জ্যোতিষী",
+                qrText: "মোৰ ৱেবছাইট স্কেন কৰক",
+                tagServices: "সেৱাসমূহ",
+                titleGuidance: "আপোনাৰ প্ৰশ্নৰ ওপৰত কেন্দ্ৰিত মাৰ্গদৰ্শন",
+                tagAbout: "বিষয়ে",
+                titleNamaste: "নমস্কাৰ, মই শৈলেন।",
+                aboutDesc: "মই এক সৰল, সন্মানীয় আৰু গোপনীয় পৰিৱেশত ব্যক্তিগত বৈদিক জ্যোতিষ পৰামৰ্শ প্ৰদান কৰোঁ।",
+                consultLang: "পৰামৰ্শৰ ভাষাসমূহ",
+                tagConsult: "পৰামৰ্শ",
+                titleCta: "আপোনাৰ কিবা প্ৰশ্ন আছে নেকি যাৰ বিষয়ে আলোচনা কৰিব বিচাৰে?",
+                descCta: "জ্যোতিষ পৰামৰ্শৰ বিষয়ে জানিবলৈ পোনপটীয়াকৈ মোৰ সৈতে যোগাযোগ কৰক।",
+                startWa: "হোৱাটছএপত আৰম্ভ কৰক",
+                footerNote: "জ্যোতিষে মাৰ্গদৰ্শন আৰু দৃষ্টিভংগী প্ৰদান কৰে; ফলাফলৰ কোনো নিশ্চয়তা নাই।"
+            },
+            hi: {
+                selectLang: "अपनी भारतीय मूल भाषा चुनें",
+                bookConsult: "परामर्श बुक करें",
+                heroTagline: "वैदिक ज्योतिष • व्यक्तिगत मार्गदर्शन",
+                heroTitle: "जीवन के महत्वपूर्ण प्रश्नों के लिए स्पष्टता।",
+                heroDesc: "करियर, रिश्ते, वित्त, परिवार और जीवन के महत्वपूर्ण निर्णयों के लिए व्यक्तिगत ज्योतिष परामर्श।",
+                waMe: "मुझे व्हाट्सएप करें",
+                callNow: "अभी कॉल करें",
+                avatarSub: "✦ वैदिक ज्योतिषी",
+                qrText: "मेरी वेबसाइट स्कैन करें",
+                tagServices: "सेवाएं",
+                titleGuidance: "आपके प्रश्नों पर केंद्रित मार्गदर्शन",
+                tagAbout: "परिचय",
+                titleNamaste: "नमस्ते, मैं शैलेंद्र हूँ।",
+                aboutDesc: "मैं एक सरल, सम्मानजनक और गोपनीय माहौल में व्यक्तिगत वैदिक ज्योतिष परामर्श प्रदान करता हूँ।",
+                consultLang: "परामर्श की भाषाएं",
+                tagConsult: "परामर्श",
+                titleCta: "क्या आपके पास कोई प्रश्न है जिस पर आप चर्चा करना चाहते हैं?",
+                descCta: "ज्योतिष परामर्श के बारे में पूछताछ करने के लिए सीधे मुझसे संपर्क करें।",
+                startWa: "व्हाट्सएप पर शुरू करें",
+                footerNote: "ज्योतिष केवल मार्गदर्शन और दृष्टिकोण प्रदान करता है; परिणामों की गारंटी नहीं है।"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const data = translations[lang];
+            if (!data) return;
+
+            document.getElementById('label-select-lang').innerText = data.selectLang;
+            document.getElementById('btn-book').innerText = data.bookConsult;
+            document.getElementById('hero-tagline').innerText = data.heroTagline;
+            document.getElementById('hero-title').innerText = data.heroTitle;
+            document.getElementById('hero-desc').innerText = data.heroDesc;
+            document.getElementById('btn-wa-me').innerText = data.waMe;
+            document.getElementById('btn-call-now').innerText = data.callNow;
+            document.getElementById('avatar-sub').innerText = data.avatarSub;
+            document.getElementById('qr-text').innerText = data.qrText;
+            document.getElementById('tag-services').innerText = data.tagServices;
+            document.getElementById('title-guidance').innerText = data.titleGuidance;
+            document.getElementById('tag-about').innerText = data.tagAbout;
+            document.getElementById('title-namaste').innerText = data.titleNamaste;
+            document.getElementById('about-desc').innerText = data.aboutDesc;
+            document.getElementById('label-consult-lang').innerText = data.consultLang;
+            document.getElementById('tag-consult').innerText = data.tagConsult;
+            document.getElementById('title-cta').innerText = data.titleCta;
+            document.getElementById('desc-cta').innerText = data.descCta;
+            document.getElementById('btn-start-wa').innerText = data.startWa;
+            document.getElementById('text-footer-note').innerText = data.footerNote;
+        }
+    </script>
 </body>
 </html>
