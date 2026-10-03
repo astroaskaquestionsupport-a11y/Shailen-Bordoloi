@@ -21,28 +21,35 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
+            -webkit-text-size-adjust: 100%;
         }
         .hero {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            padding: 20px 40px 60px 40px;
+            padding: 40px 20px 60px 20px;
             position: relative;
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding-bottom: 40px;
+            gap: 20px;
         }
         .brand {
             font-weight: bold;
             font-size: 1.2rem;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
         .lang-selector-container {
             display: flex;
@@ -58,6 +65,7 @@
             border-radius: 20px;
             cursor: pointer;
             outline: none;
+            font-size: 0.9rem;
         }
         .lang-select option {
             background-color: var(--bg-dark);
@@ -71,11 +79,13 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
+            white-space: nowrap;
+            text-align: center;
         }
         .hero-container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
@@ -113,6 +123,7 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
+            text-align: center;
         }
         .btn-call {
             border: 1px solid white;
@@ -121,11 +132,13 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
+            text-align: center;
         }
         .hero-visuals {
             display: flex;
             align-items: center;
             gap: 30px;
+            flex-shrink: 0;
         }
         .avatar-circle {
             background-color: var(--accent);
@@ -174,7 +187,7 @@
         .services-section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 60px 20px;
         }
         .section-tag {
             font-size: 0.8rem;
@@ -226,7 +239,7 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 50px 20px;
             text-align: center;
             margin-top: 40px;
         }
@@ -246,12 +259,22 @@
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 30px;
+            padding: 0 10px;
         }
         .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+        }
+        .cta-buttons .btn-call {
+            border: 1px solid white;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            background: transparent;
         }
         footer {
             text-align: center;
@@ -268,22 +291,83 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        @media (max-width: 991px) {
-            .hero-container, .about-row {
+
+        /* Responsive Breakpoint for Mobile and Tablet devices */
+        @media (max-width: 768px) {
+            header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 15px;
+                padding-bottom: 30px;
             }
-            header {
+            .header-controls {
                 flex-direction: column;
-                gap: 20px;
-            }
-            .hero-buttons, .cta-buttons {
                 justify-content: center;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+            }
+            .lang-selector-container {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 35px;
+            }
+            .hero-content {
+                width: 100%;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+            }
+            .btn-wa, .btn-call, .cta-buttons .btn-call {
+                width: 100%;
+                display: block;
             }
             .hero-visuals {
                 flex-direction: column;
-                margin-top: 30px;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                gap: 25px;
+            }
+            .about-row {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            .lang-pills {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .consultation-cta-box {
+                padding: 40px 15px;
+            }
+            .cta-title {
+                font-size: 1.6rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
             }
         }
     </style>
@@ -409,7 +493,7 @@
                 titleCta: "আপোনাৰ কিবা প্ৰশ্ন আছে নেকি যাৰ বিষয়ে আলোচনা কৰিব বিচাৰে?",
                 descCta: "জ্যোতিষ পৰামৰ্শৰ বিষয়ে জানিবলৈ পোনপটীয়াকৈ মোৰ সৈতে যোগাযোগ কৰক।",
                 startWa: "হোৱাটছএপত আৰম্ভ কৰক",
-                footerNote: "জ্যোতিষে মাৰ্গদৰ্শন আৰু দৃষ্টিভংগী প্ৰদান কৰে; ফলাফলৰ কোনো নিশ্চয়তা নাই।"
+                footerNote: "জ্যোতিষে মাৰ্গদৰ্শন আৰু দৃষ্টিভংগী প্ৰদান কৰে; ফলাফলৰ কোনো নিশ্চয়ता নাই।"
             },
             hi: {
                 selectLang: "अपनी भारतीय मूल भाषा चुनें",
